@@ -32,6 +32,31 @@ public class MyClass {
         endProgramme();
     }
 
+    private static void readFilefirstMethod() throws FileNotFoundException {
+
+        String filePath = "C:\\Users\\DELL\\Desktop\\New Text Document.txt";
+        File file = new File(filePath);
+        Scanner scanFile = new Scanner( file );//FileReader does the same like Scanner for file
+        while (scanFile.hasNextLine()){
+            String line = scanFile.nextLine();
+            System.out.println(line);
+        }
+        scanFile.close();
+    }
+
+    private static void readFileSecondMethod() throws FileNotFoundException {
+
+        //copy the file in the root directory of project and change file path to file name
+            String fileName = "New Text Document - Copy.txt";
+            File file = new File(fileName);
+            Scanner scanFile = new Scanner( file );
+            while (scanFile.hasNextLine()){
+                String line = scanFile.nextLine();
+                System.out.println(line);
+            }
+            scanFile.close();
+    }
+
     private static void readIntfromFile() {
 
         String filePath = "C:\\Users\\DELL\\Desktop\\New Text Document.txt";
@@ -48,31 +73,6 @@ public class MyClass {
             e.printStackTrace();
         }
 
-    }
-
-    private static void readFilefirstMethod() throws FileNotFoundException {
-
-        String filePath = "C:\\Users\\DELL\\Desktop\\New Text Document.txt";
-        File file = new File(filePath);
-        Scanner scanFile = new Scanner( file );
-        while (scanFile.hasNextLine()){
-            String line = scanFile.nextLine();
-            System.out.println(line);
-        }
-        scanFile.close();
-    }
-
-    private static void readFileSecondMethod() throws FileNotFoundException {
-
-        //copy the file in the root directory of project
-            String filePath = "New Text Document - Copy.txt";
-            File file = new File(filePath);
-            Scanner scanFile = new Scanner( file );
-            while (scanFile.hasNextLine()){
-                String line = scanFile.nextLine();
-                System.out.println(line);
-            }
-            scanFile.close();
     }
 
 }
