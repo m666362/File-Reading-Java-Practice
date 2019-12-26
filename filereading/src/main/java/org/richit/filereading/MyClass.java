@@ -24,9 +24,30 @@ public class MyClass {
     public static void main(String[] args) throws FileNotFoundException {
 
         startProgramme();
+
         readFilefirstMethod();
         readFileSecondMethod();
+        readIntfromFile();
+
         endProgramme();
+    }
+
+    private static void readIntfromFile() {
+
+        String filePath = "C:\\Users\\DELL\\Desktop\\New Text Document.txt";
+        File file = new File(filePath);
+        try {
+            Scanner scanFile = new Scanner( file );
+            System.out.println("File found");
+            while (scanFile.hasNextInt()){
+                int fileInt = scanFile.nextInt();
+                System.out.println("Found integer : " + fileInt);
+                //it wont find integer 500 becasuse of Myself at 2nd line
+            }
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        }
+
     }
 
     private static void readFilefirstMethod() throws FileNotFoundException {
