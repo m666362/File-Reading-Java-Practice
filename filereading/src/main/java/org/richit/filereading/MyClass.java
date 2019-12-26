@@ -24,6 +24,13 @@ public class MyClass {
     public static void main(String[] args) throws FileNotFoundException {
 
         startProgramme();
+        readFilefirstMethod();
+        readFileSecondMethod();
+        endProgramme();
+    }
+
+    private static void readFilefirstMethod() throws FileNotFoundException {
+
         String filePath = "C:\\Users\\DELL\\Desktop\\New Text Document.txt";
         File file = new File(filePath);
         Scanner scanFile = new Scanner( file );
@@ -32,6 +39,19 @@ public class MyClass {
             System.out.println(line);
         }
         scanFile.close();
-        endProgramme();
     }
+
+    private static void readFileSecondMethod() throws FileNotFoundException {
+
+        //copy the file in the root directory of project
+            String filePath = "New Text Document - Copy.txt";
+            File file = new File(filePath);
+            Scanner scanFile = new Scanner( file );
+            while (scanFile.hasNextLine()){
+                String line = scanFile.nextLine();
+                System.out.println(line);
+            }
+            scanFile.close();
+    }
+
 }
