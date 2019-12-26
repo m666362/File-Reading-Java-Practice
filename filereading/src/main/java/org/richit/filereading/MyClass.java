@@ -40,7 +40,7 @@ public class MyClass {
 
         System.out.println(dot + "Printing from readbyBufferReader and try catch method" + dot);
 
-        BufferedReader bufferedReader;
+        BufferedReader bufferedReader = null;
         String fileName = "New Text Document - Copy.txt";
         File file = new File(fileName);
         try {
@@ -62,7 +62,7 @@ public class MyClass {
         }
         finally {
             try {
-                //bufferedReader.close();
+                bufferedReader.close();
             } catch (IOException e) {
                 System.out.println("File not closed : " + file.toString());
             } catch (NullPointerException e){
