@@ -24,8 +24,14 @@ public class MyClass {
     public static void main(String[] args) throws FileNotFoundException {
 
         startProgramme();
-        String filename = "C:\\Users\\DELL\\Desktop";
-        File file = new File(filename);
+        String filePath = "C:\\Users\\DELL\\Desktop\\New Text Document.txt";
+        File file = new File(filePath);
+        Scanner scanFile = new Scanner( file );
+        while (scanFile.hasNextLine()){
+            String line = scanFile.nextLine();
+            System.out.println(line);
+        }
+        scanFile.close();
         endProgramme();
     }
 }
